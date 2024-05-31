@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AnnuaireAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2a59e12e0c30ae364250ef71c06a462e15bed17")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+650a90227bf208d78da7d2ad54326f73a9903d34")]
 [assembly: System.Reflection.AssemblyProductAttribute("AnnuaireAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AnnuaireAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -9,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 string connexionString = builder.Configuration.GetConnectionString("MainConnectionString") ??
     throw (new Exception("Connection string is missing"));
 
+
+
 builder.Services.AddDbContext<AnnuaireContext>(options => options
         .UseMySql(connexionString, ServerVersion.AutoDetect(connexionString)));
 

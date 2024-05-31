@@ -29,7 +29,6 @@ C:\Users\Guillaume MEYER\Desktop\Bloc4\Annuaire\obj\Debug\net8.0\Annuaire.pdb
 C:\Users\Guillaume MEYER\Desktop\Bloc4\Annuaire\obj\Debug\net8.0\Annuaire.genruntimeconfig.cache
 C:\Users\Guillaume MEYER\Desktop\Bloc4\Annuaire\obj\Debug\net8.0\ref\Annuaire.dll
 C:\Users\Guillaume MEYER\Desktop\Bloc4_R\Annuaire\bin\Debug\net8.0\Annuaire.deps.json
-C:\Users\Guillaume MEYER\Desktop\Bloc4_R\Annuaire\bin\Debug\net8.0\Annuaire.runtimeconfig.json
 C:\Users\Guillaume MEYER\Desktop\Bloc4_R\Annuaire\bin\Debug\net8.0\Annuaire.dll
 C:\Users\Guillaume MEYER\Desktop\Bloc4_R\Annuaire\bin\Debug\net8.0\Annuaire.pdb
 C:\Users\Guillaume MEYER\Desktop\Bloc4_R\Annuaire\obj\Debug\net8.0\Annuaire.csproj.AssemblyReference.cache
@@ -41,5 +40,4 @@ C:\Users\Guillaume MEYER\Desktop\Bloc4_R\Annuaire\obj\Debug\net8.0\Annuaire.sour
 C:\Users\Guillaume MEYER\Desktop\Bloc4_R\Annuaire\obj\Debug\net8.0\Annuaire.dll
 C:\Users\Guillaume MEYER\Desktop\Bloc4_R\Annuaire\obj\Debug\net8.0\refint\Annuaire.dll
 C:\Users\Guillaume MEYER\Desktop\Bloc4_R\Annuaire\obj\Debug\net8.0\Annuaire.pdb
-C:\Users\Guillaume MEYER\Desktop\Bloc4_R\Annuaire\obj\Debug\net8.0\Annuaire.genruntimeconfig.cache
 C:\Users\Guillaume MEYER\Desktop\Bloc4_R\Annuaire\obj\Debug\net8.0\ref\Annuaire.dll
