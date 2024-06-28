@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Annuaire",
-    "\\AnnuaireAPI"
+    "\\AnnuaireConsole",
+    "\\Annuaire\\Context"
   ],
-  "SelectedNode": "\\AnnuaireAPI\\Program.cs",
+  "SelectedNode": "\\Annuaire\\Context\\AnnuaireContext.cs",
   "PreviewInSolutionExplorer": false
 }
