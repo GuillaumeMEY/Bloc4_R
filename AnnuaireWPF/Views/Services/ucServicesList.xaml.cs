@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Annuaire.DAO;
+using AnnuaireWPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,11 @@ namespace AnnuaireWPF.Views.Services
         public ucServicesList()
         {
             InitializeComponent();
+        }
+        private void ServiceDetails_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            MainViewModel.Instance.ChargerService(((Service)btn.DataContext).Id);
         }
     }
 }

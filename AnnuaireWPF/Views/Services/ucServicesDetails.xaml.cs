@@ -1,5 +1,4 @@
-﻿using Annuaire.DAO;
-using AnnuaireWPF.ViewModels;
+﻿using AnnuaireWPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,21 +14,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AnnuaireWPF.Views.Sites
+namespace AnnuaireWPF.Views.Services
 {
     /// <summary>
-    /// Logique d'interaction pour ucSitesList.xaml
+    /// Logique d'interaction pour ucServicesDetails.xaml
     /// </summary>
-    public partial class ucSitesList : UserControl
+    public partial class ucServicesDetails : UserControl
     {
-        public ucSitesList()
+        public ucServicesDetails()
         {
             InitializeComponent();
         }
-        private void SiteDetails_Click(object sender, RoutedEventArgs e)
+        // retour ServicesList
+        private void Retour_Click(object sender, RoutedEventArgs e)
         {
-            var btn = sender as Button;
-            MainViewModel.Instance.ChargerSite(((Site)btn.DataContext).Id);
+            MainViewModel.Instance.ChargerServices();
         }
     }
 }

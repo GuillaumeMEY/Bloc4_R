@@ -37,5 +37,11 @@ namespace AnnuaireWPF.ViewModels
             ListeSites = await HttpClientService.GetAllSites();
             OnPropertyChanged(nameof(ListeSites));
         }
+        public async void GetSite(int siteId)
+        {
+            Site = await HttpClientService.GetSite(siteId);
+            SiteId = siteId;
+            OnPropertyChanged(nameof(Site));
+        }
     }
 }

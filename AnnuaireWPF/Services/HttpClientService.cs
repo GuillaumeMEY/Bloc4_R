@@ -47,6 +47,8 @@ namespace AnnuaireWPF.Services
             throw new Exception(response.ReasonPhrase);
         }
 
+
+
         // Sites
         public static async Task<ObservableCollection<Site>> GetAllSites()
         {
@@ -60,6 +62,20 @@ namespace AnnuaireWPF.Services
             }
             throw new Exception(response.ReasonPhrase);
         }
+        // Recherche site via ID
+        public static async Task<Site> GetSite(int siteId)
+        {
+            string route = $"api/Sites/{siteId}";
+            var response = await Client.GetAsync(route);
+            if (response.IsSuccessStatusCode)
+            {
+                string resultat = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<Site>(resultat)
+                    ?? throw new FormatException($"Erreur http : {route} ");
+            }
+            throw new Exception(response.ReasonPhrase);
+        }
+
 
         // Services
         public static async Task<ObservableCollection<Service>> GetAllServices()
@@ -74,6 +90,18 @@ namespace AnnuaireWPF.Services
             }
             throw new Exception(response.ReasonPhrase);
         }
-
+        // Recherche Service via ID
+        public static async Task<Service> GetService(int serviceId)
+        {
+            string route = $"api/Services/{serviceId}";
+            var response = await Client.GetAsync(route);
+            if (response.IsSuccessStatusCode)
+            {
+                string resultat = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<Service>(resultat)
+                    ?? throw new FormatException($"Erreur http : {route} ");
+            }
+            throw new Exception(response.ReasonPhrase);
+        }
     }
 }

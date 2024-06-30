@@ -38,13 +38,21 @@ namespace AnnuaireWPF.ViewModels
             UserControl = uc;
         }
 
-            // Sites
-            public void ChargerSites()
+        // Sites
+        public void ChargerSites()
         {
             var uc = new ucSitesList();
             uc.DataContext = SitesViewModel.Instance;
             UserControl = uc;
         }
+        public void ChargerSite(int id)
+        {
+            var uc = new ucSitesDetails();
+            uc.DataContext = SitesViewModel.Instance;
+            ((SitesViewModel)uc.DataContext).GetSite(id);
+            UserControl = uc;
+        }
+
         // Service
         public void ChargerServices()
         {
@@ -52,5 +60,13 @@ namespace AnnuaireWPF.ViewModels
             uc.DataContext = ServicesViewModel.Instance;
             UserControl = uc;
         }
+        public void ChargerService(int id)
+        {
+            var uc = new ucServicesDetails();
+            uc.DataContext = ServicesViewModel.Instance;
+            ((ServicesViewModel)uc.DataContext).GetService(id);
+            UserControl = uc;
+        }
+
     }
 }
