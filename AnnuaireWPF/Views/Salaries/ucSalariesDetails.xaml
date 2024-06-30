@@ -50,7 +50,7 @@
             <StackPanel Grid.Row="3" Grid.Column="1">
                 <TextBlock Text="Service" ></TextBlock>
                 <ComboBox Name="comboBoxServicesList"
-                            Text="{Binding Salarie.Service.Nom}"
+                            Text="{Binding Salarie.Service.NomService}"
                             IsEditable="true"
                             IsReadOnly="true" Grid.ColumnSpan="4" Margin="0,0,21,0"
                             ItemsSource="{Binding ListeServices}"
@@ -88,7 +88,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
                 <TextBlock Text="Téléphone fixe"></TextBlock>
-                <TextBox   Text="{Binding Salarie.TelFixe}"></TextBox>
+                <TextBox   Text="{Binding Salarie.TelFix}"></TextBox>
             </StackPanel>
 
             <StackPanel Grid.Column="2">
