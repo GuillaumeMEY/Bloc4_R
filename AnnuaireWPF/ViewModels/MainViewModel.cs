@@ -1,4 +1,5 @@
 ﻿using AnnuaireWPF.Views.Salaries;
+using AnnuaireWPF.Views.Services;
 using AnnuaireWPF.Views.Sites;
 using System.Windows.Controls;
 namespace AnnuaireWPF.ViewModels
@@ -36,6 +37,12 @@ namespace AnnuaireWPF.ViewModels
             uc.DataContext = SitesViewModel.Instance;
             UserControl = uc;
         }
-
+        // Service
+        public void ChargerServices()
+        {
+            var uc = new ucServicesList();
+            uc.DataContext = ServicesViewModel.Instance;
+            UserControl = uc;
+        }
     }
 }

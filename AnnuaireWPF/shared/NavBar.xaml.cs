@@ -34,5 +34,9 @@ namespace AnnuaireWPF.shared
         {
             MainViewModel.Instance.ChargerSites();
         }
+        private void MenuServices_Click(object sender, RoutedEventArgs e)
+        {
+            MainViewModel.Instance.ChargerServices();
+        }
     }
 }
