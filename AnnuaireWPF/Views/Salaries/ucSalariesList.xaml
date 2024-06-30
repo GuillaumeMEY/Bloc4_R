@@ -65,6 +65,7 @@
                         <TextBlock Margin="10" Grid.Column="8" Text="{Binding TelPort}" />
                         <TextBlock Margin="10" Grid.Column="10" Text="{Binding Site.Ville}" />
                         <TextBlock Margin="10" Grid.Column="12" Text="{Binding Service.Nom}" />
+                        <Button    Margin="10" Grid.Column="14" Click="SalarieDetails_Click" >Voir les détails</Button>
 
                     </Grid>
                 </DataTemplate>

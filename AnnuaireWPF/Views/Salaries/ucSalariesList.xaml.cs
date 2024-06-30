@@ -1,4 +1,5 @@
-﻿using AnnuaireWPF.ViewModels;
+﻿using Annuaire.DAO;
+using AnnuaireWPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,11 @@ namespace AnnuaireWPF.Views.Salaries
         {
             InitializeComponent();
             SalariesViewModel.Instance.GetAllSalaries();
+        }
+        private void SalarieDetails_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            MainViewModel.Instance.ChargerSalarie(((Salarie)btn.DataContext).Id);
         }
     }
 }

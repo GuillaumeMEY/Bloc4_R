@@ -30,8 +30,16 @@ namespace AnnuaireWPF.ViewModels
             UserControl = uc;
         }
 
-        // Sites
-        public void ChargerSites()
+        public void ChargerSalarie(int id)
+        {
+            var uc = new ucSalariesDetails();
+            uc.DataContext = SalariesViewModel.Instance;
+            ((SalariesViewModel)uc.DataContext).GetSalarie(id);
+            UserControl = uc;
+        }
+
+            // Sites
+            public void ChargerSites()
         {
             var uc = new ucSitesList();
             uc.DataContext = SitesViewModel.Instance;

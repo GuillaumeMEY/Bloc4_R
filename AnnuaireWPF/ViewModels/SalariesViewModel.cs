@@ -16,6 +16,8 @@ namespace AnnuaireWPF.ViewModels
 
         public Salarie Salarie { get; set; }
 
+        public int SalarieId { get; set; } = 0;
+
         public ObservableCollection<Salarie> ListeSalaries { get; set; }
 
         public ObservableCollection<Salarie> BaseSalarieList { get; set; }
@@ -35,5 +37,13 @@ namespace AnnuaireWPF.ViewModels
             OnPropertyChanged(nameof(ListeSalaries));
             OnPropertyChanged(nameof(BaseSalarieList));
         }
-   }
+
+        // Appel fonction Voir salarie via ID
+        public async void GetSalarie(int salarieId)
+        {
+            Salarie = await HttpClientService.GetSalarie(salarieId);
+            SalarieId = salarieId;
+            OnPropertyChanged(nameof(Salarie));
+        }
+    }
 }

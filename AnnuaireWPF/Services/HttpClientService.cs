@@ -33,6 +33,19 @@ namespace AnnuaireWPF.Services
             throw new Exception(response.ReasonPhrase);
         }
 
+        // Recherche salarie via ID
+        public static async Task<Salarie> GetSalarie(int salarieId)
+        {
+            string route = $"api/Salaries/{salarieId}";
+            var response = await Client.GetAsync(route);
+            if (response.IsSuccessStatusCode)
+            {
+                string resultat = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<Salarie>(resultat)
+                    ?? throw new FormatException($"Erreur http : {route} ");
+            }
+            throw new Exception(response.ReasonPhrase);
+        }
 
         // Sites
         public static async Task<ObservableCollection<Site>> GetAllSites()
