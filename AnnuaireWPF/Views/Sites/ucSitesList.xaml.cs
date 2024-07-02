@@ -31,5 +31,9 @@ namespace AnnuaireWPF.Views.Sites
             var btn = sender as Button;
             MainViewModel.Instance.ChargerSite(((Site)btn.DataContext).Id);
         }
+        private void SiteCreate_Click(object sender, RoutedEventArgs e)
+        {
+            MainViewModel.Instance.CreateSite();
+        }
     }
 }

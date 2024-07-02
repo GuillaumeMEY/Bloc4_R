@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using Annuaire.DAO;
 using Newtonsoft.Json;
 
@@ -46,7 +48,23 @@ namespace AnnuaireWPF.Services
             }
             throw new Exception(response.ReasonPhrase);
         }
+        // Creer Salarie
+        public static async Task CreateSalarie(Salarie salarie)
+        {
+            string route = $"api/Salaries";
+            string json = JsonConvert.SerializeObject(salarie);
+            var buffer = Encoding.UTF8.GetBytes(json);
 
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            HttpResponseMessage response = await Client.PostAsync(route, byteContent);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception(response.ReasonPhrase);
+            }
+        }
 
 
         // Sites
@@ -75,7 +93,22 @@ namespace AnnuaireWPF.Services
             }
             throw new Exception(response.ReasonPhrase);
         }
+        public static async Task CreateSite(Site site)
+        {
+            string route = $"api/Sites";
+            string json = JsonConvert.SerializeObject(site);
+            var buffer = Encoding.UTF8.GetBytes(json);
 
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            HttpResponseMessage response = await Client.PostAsync(route, byteContent);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception(response.ReasonPhrase);
+            }
+        }
 
         // Services
         public static async Task<ObservableCollection<Service>> GetAllServices()
@@ -103,5 +136,24 @@ namespace AnnuaireWPF.Services
             }
             throw new Exception(response.ReasonPhrase);
         }
+
+        // Creer un service
+        public static async Task CreateService(Service service)
+        {
+            string route = $"api/Services";
+            string json = JsonConvert.SerializeObject(service);
+            var buffer = Encoding.UTF8.GetBytes(json);
+
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            HttpResponseMessage response = await Client.PostAsync(route, byteContent);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception(response.ReasonPhrase);
+            }
+        }
+
     }
 }

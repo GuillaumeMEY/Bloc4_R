@@ -29,7 +29,7 @@ namespace AnnuaireWPF.ViewModels
             GetAllSalaries();
         }
 
-        // Appel fonction Voir tous les salarie
+
         public async void GetAllSalaries()
         {
             ListeSalaries = await HttpClientService.GetAllSalaries();
@@ -38,12 +38,17 @@ namespace AnnuaireWPF.ViewModels
             OnPropertyChanged(nameof(BaseSalarieList));
         }
 
-        // Appel fonction Voir salarie via ID
+
         public async void GetSalarie(int salarieId)
         {
             Salarie = await HttpClientService.GetSalarie(salarieId);
             SalarieId = salarieId;
             OnPropertyChanged(nameof(Salarie));
+        }
+
+        public async void CreateSalarie(Salarie salarie)
+        {
+            await HttpClientService.CreateSalarie(salarie);
         }
     }
 }

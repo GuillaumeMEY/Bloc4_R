@@ -32,12 +32,15 @@ namespace AnnuaireWPF.ViewModels
             OnPropertyChanged(nameof(ListeServices));
         }
 
-        // Appel fonction voir service via ID
         public async void GetService(int serviceId)
         {
             Service = await HttpClientService.GetService(serviceId);
             ServiceId = serviceId;
             OnPropertyChanged(nameof(Service));
+        }
+        public async void CreateService(Service service)
+        {
+            await HttpClientService.CreateService(service);
         }
     }
 }

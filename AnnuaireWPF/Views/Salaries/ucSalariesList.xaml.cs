@@ -32,5 +32,9 @@ namespace AnnuaireWPF.Views.Salaries
             var btn = sender as Button;
             MainViewModel.Instance.ChargerSalarie(((Salarie)btn.DataContext).Id);
         }
+        private void SalarieCreate_Click(object sender, RoutedEventArgs e)
+        {
+            MainViewModel.Instance.CreateSalarie();
+        }
     }
 }

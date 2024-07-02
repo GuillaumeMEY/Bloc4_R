@@ -35,7 +35,7 @@
             </Grid>
         </Grid>
 
-
+        <Button Grid.Column="1" Grid.Row="1" Content="Créer un salarié" HorizontalAlignment="Right" Margin="5" Click="SalarieCreate_Click" />
 
         <ListBox Grid.Row="3" Grid.ColumnSpan="2" ItemsSource="{Binding ListeSalaries}" Grid.IsSharedSizeScope="True"  Background="#eaeaea">
             <ListBox.ItemTemplate>

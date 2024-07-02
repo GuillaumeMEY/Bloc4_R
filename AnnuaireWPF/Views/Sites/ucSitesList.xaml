@@ -19,6 +19,7 @@
 
         <TextBlock Grid.Column="0" Grid.Row="0" Text="Sites" Margin="5" HorizontalAlignment="Left"/>
 
+        <Button Grid.Column="1" Grid.Row="1" Content="Créer" HorizontalAlignment="Right" Margin="5" Click="SiteCreate_Click" />
 
         <ListBox Grid.Row="3" Grid.ColumnSpan="2" ItemsSource="{Binding ListeSites}" Grid.IsSharedSizeScope="True"  Background="#eaeaea">
             <ListBox.ItemTemplate>

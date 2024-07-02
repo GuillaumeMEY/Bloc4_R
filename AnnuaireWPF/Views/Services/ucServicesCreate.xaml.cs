@@ -1,5 +1,4 @@
-﻿using Annuaire.DAO;
-using AnnuaireWPF.ViewModels;
+﻿using AnnuaireWPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,22 +17,24 @@ using System.Windows.Shapes;
 namespace AnnuaireWPF.Views.Services
 {
     /// <summary>
-    /// Logique d'interaction pour ucServicesList.xaml
+    /// Logique d'interaction pour ucServicesCreate.xaml
     /// </summary>
-    public partial class ucServicesList : UserControl
+    public partial class ucServicesCreate : UserControl
     {
-        public ucServicesList()
+        public ucServicesCreate()
         {
             InitializeComponent();
         }
-        private void ServiceDetails_Click(object sender, RoutedEventArgs e)
+        private void CreateService_Click(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;
-            MainViewModel.Instance.ChargerService(((Service)btn.DataContext).Id);
+            var service = ((ServicesViewModel)btn.DataContext).Service;
+            ServicesViewModel.Instance.CreateService(service);
+            MainViewModel.Instance.ChargerServices();
         }
-        private void ServiceCreate_Click(object sender, RoutedEventArgs e)
+        private void Retour_Click(object sender, RoutedEventArgs e)
         {
-            MainViewModel.Instance.CreateService();
+            MainViewModel.Instance.ChargerServices();
         }
     }
 }

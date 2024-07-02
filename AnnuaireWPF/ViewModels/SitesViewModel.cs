@@ -43,5 +43,9 @@ namespace AnnuaireWPF.ViewModels
             SiteId = siteId;
             OnPropertyChanged(nameof(Site));
         }
+        public async void CreateSite(Site site)
+        {
+            await HttpClientService.CreateSite(site);
+        }
     }
 }

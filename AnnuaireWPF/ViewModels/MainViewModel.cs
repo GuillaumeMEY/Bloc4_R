@@ -1,4 +1,5 @@
-﻿using AnnuaireWPF.Views.Salaries;
+﻿using Annuaire.DAO;
+using AnnuaireWPF.Views.Salaries;
 using AnnuaireWPF.Views.Services;
 using AnnuaireWPF.Views.Sites;
 using System.Windows.Controls;
@@ -38,6 +39,14 @@ namespace AnnuaireWPF.ViewModels
             UserControl = uc;
         }
 
+        public void CreateSalarie()
+        {
+            var uc = new ucSalariesCreate();
+            uc.DataContext = SalariesViewModel.Instance;
+            ((SalariesViewModel)uc.DataContext).Salarie = new Salarie();
+            UserControl = uc;
+        }
+
         // Sites
         public void ChargerSites()
         {
@@ -52,8 +61,15 @@ namespace AnnuaireWPF.ViewModels
             ((SitesViewModel)uc.DataContext).GetSite(id);
             UserControl = uc;
         }
+        public void CreateSite()
+        {
+            var uc = new ucSitesCreate();
+            uc.DataContext = SitesViewModel.Instance;
+            ((SitesViewModel)uc.DataContext).Site = new Site();
+            UserControl = uc;
+        }
 
-        // Service
+        // Services
         public void ChargerServices()
         {
             var uc = new ucServicesList();
@@ -65,6 +81,13 @@ namespace AnnuaireWPF.ViewModels
             var uc = new ucServicesDetails();
             uc.DataContext = ServicesViewModel.Instance;
             ((ServicesViewModel)uc.DataContext).GetService(id);
+            UserControl = uc;
+        }
+        public void CreateService()
+        {
+            var uc = new ucServicesCreate();
+            uc.DataContext = ServicesViewModel.Instance;
+            ((ServicesViewModel)uc.DataContext).Service = new Service();
             UserControl = uc;
         }
 
