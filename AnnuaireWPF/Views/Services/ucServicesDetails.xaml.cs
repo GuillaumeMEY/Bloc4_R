@@ -37,5 +37,12 @@ namespace AnnuaireWPF.Views.Services
             ServicesViewModel.Instance.UpdateService(service);
             MainViewModel.Instance.ChargerServices();
         }
+        private void DeleteService_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            var serviceId = ((ServicesViewModel)btn.DataContext).Service.Id;
+            ServicesViewModel.Instance.DeleteService(serviceId);
+            MainViewModel.Instance.ChargerServices();
+        }
     }
 }

@@ -36,5 +36,12 @@ namespace AnnuaireWPF.Views.Sites
             SitesViewModel.Instance.UpdateSite(site);
             MainViewModel.Instance.ChargerSites();
         }
+        private void DeleteSite_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            var siteId = ((SitesViewModel)btn.DataContext).Site.Id;
+            SitesViewModel.Instance.DeleteSite(siteId);
+            MainViewModel.Instance.ChargerSites();
+        }
     }
 }

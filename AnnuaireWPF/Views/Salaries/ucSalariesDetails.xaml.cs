@@ -50,5 +50,12 @@ namespace AnnuaireWPF.Views.Salaries
             SalariesViewModel.Instance.UpdateSalarie(salarie);
             MainViewModel.Instance.ChargerSalaries();
         }
+        private void DeleteSalarie_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            var salarieId = ((SalariesViewModel)btn.DataContext).Salarie.Id;
+            SalariesViewModel.Instance.DeleteSalarie(salarieId);
+            MainViewModel.Instance.ChargerSalaries();
+        }
     }
 }

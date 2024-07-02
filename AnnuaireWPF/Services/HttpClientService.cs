@@ -83,6 +83,17 @@ namespace AnnuaireWPF.Services
                 throw new Exception($"{response.ReasonPhrase}");
             }
         }
+        // Delete Salarie
+        public static async Task DeleteSalarie(int id)
+        {
+            string route = $"api/Salaries/{id}";
+            var response = await Client.DeleteAsync(route);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception(response.ReasonPhrase);
+            }
+        }
 
 
         // Sites
@@ -146,7 +157,17 @@ namespace AnnuaireWPF.Services
                 throw new Exception($"{response.ReasonPhrase}");
             }
         }
+        // Delete Site
+        public static async Task DeleteSite(int id)
+        {
+            string route = $"api/Sites/{id}";
+            var response = await Client.DeleteAsync(route);
 
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception(response.ReasonPhrase);
+            }
+        }
         // Services
         public static async Task<ObservableCollection<Service>> GetAllServices()
         {
@@ -207,6 +228,17 @@ namespace AnnuaireWPF.Services
             if (!response.IsSuccessStatusCode)
             {
                 throw new Exception($"{response.ReasonPhrase}");
+            }
+        }
+        // Delete un service via ID
+        public static async Task DeleteService(int id)
+        {
+            string route = $"api/Services/{id}";
+            var response = await Client.DeleteAsync(route);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception(response.ReasonPhrase);
             }
         }
 

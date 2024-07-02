@@ -50,10 +50,15 @@ namespace AnnuaireWPF.ViewModels
         {
             await HttpClientService.CreateSalarie(salarie);
         }
-        // Appel fonction Update salarie
+
         public async void UpdateSalarie(Salarie salarie)
         {
             await HttpClientService.UpdateSalarie(salarie);
+        }
+
+        public async void DeleteSalarie(int id)
+        {
+            await HttpClientService.DeleteSalarie(id);
         }
     }
 }

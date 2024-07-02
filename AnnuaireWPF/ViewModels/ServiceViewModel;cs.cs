@@ -47,5 +47,10 @@ namespace AnnuaireWPF.ViewModels
         {
             await HttpClientService.UpdateService(service);
         }
+        // Appel fonction Supprime le service
+        public async void DeleteService(int id)
+        {
+            await HttpClientService.DeleteService(id);
+        }
     }
 }
