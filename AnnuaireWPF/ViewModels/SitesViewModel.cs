@@ -47,5 +47,11 @@ namespace AnnuaireWPF.ViewModels
         {
             await HttpClientService.CreateSite(site);
         }
+
+        // Appel fonction Update site
+        public async void UpdateSite(Site site)
+        {
+            await HttpClientService.UpdateSite(site);
+        }
     }
 }

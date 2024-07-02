@@ -30,5 +30,12 @@ namespace AnnuaireWPF.Views.Services
         {
             MainViewModel.Instance.ChargerServices();
         }
+        private void UpdateService_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            var service = ((ServicesViewModel)btn.DataContext).Service;
+            ServicesViewModel.Instance.UpdateService(service);
+            MainViewModel.Instance.ChargerServices();
+        }
     }
 }

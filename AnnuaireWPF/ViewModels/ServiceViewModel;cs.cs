@@ -42,5 +42,10 @@ namespace AnnuaireWPF.ViewModels
         {
             await HttpClientService.CreateService(service);
         }
+        // Appel fonction Update le service
+        public async void UpdateService(Service service)
+        {
+            await HttpClientService.UpdateService(service);
+        }
     }
 }

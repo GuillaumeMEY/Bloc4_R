@@ -65,6 +65,24 @@ namespace AnnuaireWPF.Services
                 throw new Exception(response.ReasonPhrase);
             }
         }
+        // Update Salarie
+        public static async Task UpdateSalarie(Salarie salarie)
+        {
+            string route = $"api/Salaries/{salarie.Id}";
+
+            string json = JsonConvert.SerializeObject(salarie);
+            var buffer = Encoding.UTF8.GetBytes(json);
+
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            HttpResponseMessage response = await Client.PutAsync(route, byteContent);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception($"{response.ReasonPhrase}");
+            }
+        }
 
 
         // Sites
@@ -93,6 +111,7 @@ namespace AnnuaireWPF.Services
             }
             throw new Exception(response.ReasonPhrase);
         }
+        // Creer site
         public static async Task CreateSite(Site site)
         {
             string route = $"api/Sites";
@@ -107,6 +126,24 @@ namespace AnnuaireWPF.Services
             if (!response.IsSuccessStatusCode)
             {
                 throw new Exception(response.ReasonPhrase);
+            }
+        }
+        // Update Site
+        public static async Task UpdateSite(Site site)
+        {
+            string route = $"api/Sites/{site.Id}";
+
+            string json = JsonConvert.SerializeObject(site);
+            var buffer = Encoding.UTF8.GetBytes(json);
+
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            HttpResponseMessage response = await Client.PutAsync(route, byteContent);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception($"{response.ReasonPhrase}");
             }
         }
 
@@ -154,6 +191,25 @@ namespace AnnuaireWPF.Services
                 throw new Exception(response.ReasonPhrase);
             }
         }
+        // Update service
+        public static async Task UpdateService(Service service)
+        {
+            string route = $"api/Services/{service.Id}";
+
+            string json = JsonConvert.SerializeObject(service);
+            var buffer = Encoding.UTF8.GetBytes(json);
+
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            HttpResponseMessage response = await Client.PutAsync(route, byteContent);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception($"{response.ReasonPhrase}");
+            }
+        }
+
 
     }
 }
