@@ -1,9 +1,19 @@
 
 
 using Annuaire.Context;
+using AnnuaireModel.Dao;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAuthentication(IdentityConstants.ApplicationScheme)
+    .AddIdentityCookies();
+builder.Services.AddAuthorizationBuilder();
+
+builder.Services.AddIdentityCore<User>()
+    .AddEntityFrameworkStores<AnnuaireContext>()
+    .AddApiEndpoints();
 
 //chaine de connexion
 string connexionString = builder.Configuration.GetConnectionString("MainConnectionString") ??
@@ -22,6 +32,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+app.MapIdentityApi<User>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

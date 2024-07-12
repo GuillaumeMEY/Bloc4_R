@@ -22,5 +22,13 @@ namespace AnnuaireWPF
             InitializeComponent();
             this.DataContext = MainViewModel.Instance;
         }
+        // combinaison de code pour ouvir l'auth
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Y && Keyboard.Modifiers == ModifierKeys.Control)
+            {
+                MainViewModel.Instance.ChargerLogin();
+            }
+        }
     }
 }

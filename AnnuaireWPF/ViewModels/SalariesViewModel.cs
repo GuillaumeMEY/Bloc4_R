@@ -22,11 +22,19 @@ namespace AnnuaireWPF.ViewModels
 
         public ObservableCollection<Salarie> BaseSalarieList { get; set; }
 
+        public ObservableCollection<Site> ListeSites { get; set; }
+
+        public ObservableCollection<Service> ListeServices { get; set; }
+
+        public int SiteId { get; set; } = 0;
+
+        public int ServiceId { get; set; } = 0;
 
 
         public SalariesViewModel()
         {
             GetAllSalaries();
+            GetAllSitesAndServices();
         }
 
 
@@ -59,6 +67,17 @@ namespace AnnuaireWPF.ViewModels
         public async void DeleteSalarie(int id)
         {
             await HttpClientService.DeleteSalarie(id);
+        }
+
+        // Voir liste deroulante a changer
+        public async void GetAllSitesAndServices()
+        {
+            ListeSites = await HttpClientService.GetAllSites();
+            ListeServices = await HttpClientService.GetAllServices();
+            ListeServices.Add(new Service() { Id = 0, NomService = "" });
+            ListeSites.Add(new Site() { Id = 0, Ville = "" });
+            OnPropertyChanged(nameof(ListeServices));
+            OnPropertyChanged(nameof(ListeSites));
         }
     }
 }

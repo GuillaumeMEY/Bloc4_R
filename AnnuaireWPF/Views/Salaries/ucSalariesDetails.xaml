@@ -50,11 +50,11 @@
             <StackPanel Grid.Row="3" Grid.Column="1">
                 <TextBlock Text="Service" ></TextBlock>
                 <ComboBox Name="comboBoxServicesList"
-                            Text="{Binding Salarie.Service.NomService}"
+                            Text="{Binding Salarie.service.NomService}"
                             IsEditable="true"
                             IsReadOnly="true" Grid.ColumnSpan="4" Margin="0,0,21,0"
                             ItemsSource="{Binding ListeServices}"
-                            DisplayMemberPath="Nom" 
+                            DisplayMemberPath="NomService" 
                             SelectionChanged="comboBoxServicesList_SelectionChanged" />
             </StackPanel>
         </Grid>

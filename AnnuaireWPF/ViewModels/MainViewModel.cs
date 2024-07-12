@@ -1,4 +1,5 @@
 ﻿using Annuaire.DAO;
+using AnnuaireWPF.Views.login;
 using AnnuaireWPF.Views.Salaries;
 using AnnuaireWPF.Views.Services;
 using AnnuaireWPF.Views.Sites;
@@ -88,6 +89,13 @@ namespace AnnuaireWPF.ViewModels
             var uc = new ucServicesCreate();
             uc.DataContext = ServicesViewModel.Instance;
             ((ServicesViewModel)uc.DataContext).Service = new Service();
+            UserControl = uc;
+        }
+        // Login ( redirige vers la vue )
+        public void ChargerLogin()
+        {
+            var uc = new ucLogin();
+            uc.DataContext = LoginViewModel.Instance;
             UserControl = uc;
         }
 

@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using Annuaire.DAO;
+using AnnuaireWPF.Models;
 using Newtonsoft.Json;
 
 namespace AnnuaireWPF.Services
@@ -242,6 +243,21 @@ namespace AnnuaireWPF.Services
             }
         }
 
+
+        // login
+        public static async Task<bool> Login(string pwd)
+        {
+            string route = "login?useCookies=true&useSessionCookies=true";
+            var jsonString = JsonConvert.SerializeObject(new LoginUser
+            {
+                Email = "admin@admin.fr",
+                Password = pwd
+            });
+
+            var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            var response = await Client.PostAsync(route, httpContent);
+            return response.IsSuccessStatusCode;
+        }
 
     }
 }

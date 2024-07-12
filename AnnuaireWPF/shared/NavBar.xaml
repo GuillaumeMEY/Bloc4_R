@@ -10,5 +10,6 @@
         <MenuItem Header="Salaries" Click="MenuSalaries_Click"/>
         <MenuItem Header="Sites" Click="MenuSites_Click"/>
         <MenuItem Header="Services" Click="MenuServices_Click"/>
+        <MenuItem Header="Login" Click="Login_Click"/>
     </Menu>
 </UserControl>

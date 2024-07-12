@@ -38,5 +38,9 @@ namespace AnnuaireWPF.shared
         {
             MainViewModel.Instance.ChargerServices();
         }
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            MainViewModel.Instance.ChargerLogin();
+        }
     }
 }
