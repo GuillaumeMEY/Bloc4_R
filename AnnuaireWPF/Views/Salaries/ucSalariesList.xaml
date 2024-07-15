@@ -33,7 +33,7 @@
 
 
 
-                <TextBox  Grid.Column="0" TextChanged="TextBox_TextChanged" Name="SearchBox" HorizontalAlignment="Stretch" />
+                <TextBox  Grid.Column="0" TextChanged="TextBox_TextChanged" Name="SearchBox" Grid.ColumnSpan="2" Margin="-453,0,115,0" />
                 <Grid Grid.Column="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
