@@ -23,16 +23,20 @@ namespace AnnuaireAPI.Controllers
 
         // GET: api/Salaries
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Salarie>>> GetSalarie()
+        public async Task<ActionResult<IEnumerable<Salarie>>> GetSalaries()
         {
-            return await _context.Salarie.ToListAsync();
+            return await _context.Salarie.Include(s => s.Service)
+                                          .Include(s => s.Site).ToListAsync();
         }
 
         // GET: api/Salaries/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Salarie>> GetSalarie(int id)
         {
-            var salarie = await _context.Salarie.FindAsync(id);
+            var salarie = await _context.Salarie.Include(s => s.Service)
+                                                 .Include(s => s.Site)
+                                                 .Where(v => v.Id == id)
+                                                 .FirstOrDefaultAsync();
 
             if (salarie == null)
             {

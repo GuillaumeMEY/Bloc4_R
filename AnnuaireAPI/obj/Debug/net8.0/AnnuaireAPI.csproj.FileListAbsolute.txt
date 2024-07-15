@@ -249,3 +249,4 @@ C:\Users\Guillaume MEYER\Desktop\Bloc4_R\AnnuaireAPI\obj\Debug\net8.0\refint\Ann
 C:\Users\Guillaume MEYER\Desktop\Bloc4_R\AnnuaireAPI\obj\Debug\net8.0\AnnuaireAPI.pdb
 C:\Users\Guillaume MEYER\Desktop\Bloc4_R\AnnuaireAPI\obj\Debug\net8.0\AnnuaireAPI.genruntimeconfig.cache
 C:\Users\Guillaume MEYER\Desktop\Bloc4_R\AnnuaireAPI\obj\Debug\net8.0\ref\AnnuaireAPI.dll
+C:\Users\Guillaume MEYER\Desktop\Bloc4_R\AnnuaireAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll

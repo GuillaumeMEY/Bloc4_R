@@ -70,7 +70,6 @@ namespace AnnuaireWPF.Services
         public static async Task UpdateSalarie(Salarie salarie)
         {
             string route = $"api/Salaries/{salarie.Id}";
-
             string json = JsonConvert.SerializeObject(salarie);
             var buffer = Encoding.UTF8.GetBytes(json);
 

@@ -26,6 +26,7 @@ namespace AnnuaireWPF.Views.Salaries
         {
             InitializeComponent();
         }
+
         private void comboBoxServicesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Service service = (Service)((ComboBox)sender).SelectedItem;
@@ -45,6 +46,7 @@ namespace AnnuaireWPF.Views.Salaries
             SalariesViewModel.Instance.CreateSalarie(salarie);
             MainViewModel.Instance.ChargerSalaries();
         }
+
         private void Retour_Click(object sender, RoutedEventArgs e)
         {
             MainViewModel.Instance.ChargerSalaries();
