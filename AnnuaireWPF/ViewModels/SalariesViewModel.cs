@@ -57,16 +57,19 @@ namespace AnnuaireWPF.ViewModels
         public async void CreateSalarie(Salarie salarie)
         {
             await HttpClientService.CreateSalarie(salarie);
+            MainViewModel.Instance.ChargerSalaries();
         }
 
         public async void UpdateSalarie(Salarie salarie)
         {
             await HttpClientService.UpdateSalarie(salarie);
+            MainViewModel.Instance.ChargerSalaries();
         }
 
         public async void DeleteSalarie(int id)
         {
             await HttpClientService.DeleteSalarie(id);
+            MainViewModel.Instance.ChargerSalaries();
         }
 
         // Voir liste deroulante a changer
