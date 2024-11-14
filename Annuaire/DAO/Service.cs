@@ -10,6 +10,6 @@ namespace Annuaire.DAO
     {
         public int Id { get; set; }
 
-        public string NomService { get; set; }
+        public string NomService { get; set; } = string.Empty;
     }
 }

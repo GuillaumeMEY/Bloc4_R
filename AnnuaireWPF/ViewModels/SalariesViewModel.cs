@@ -72,7 +72,7 @@ namespace AnnuaireWPF.ViewModels
             MainViewModel.Instance.ChargerSalaries();
         }
 
-        // Voir liste deroulante a changer
+        // Voir la liste deroulante
         public async void GetAllSitesAndServices()
         {
             ListeSites = await HttpClientService.GetAllSites();

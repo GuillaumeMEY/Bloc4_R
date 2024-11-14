@@ -44,21 +44,33 @@ namespace AnnuaireWPF.Views.Salaries
             var siteId = SalariesViewModel.Instance.SiteId;
             var serviceId = SalariesViewModel.Instance.ServiceId;
 
-           
+            if (siteId != 0 && serviceId != 0)
+            {
+                list = new ObservableCollection<Salarie>(list.Where(s => s.SiteId == siteId && s.ServiceId == serviceId));
+            }
+            else if (siteId != 0 && serviceId == 0)
+            {
+                list = new ObservableCollection<Salarie>(list.Where(s => s.SiteId == siteId));
+            }
+            else if (siteId == 0 && serviceId != 0)
+            {
+                list = new ObservableCollection<Salarie>(list.Where(s => s.ServiceId == serviceId));
+            }
+            else if (siteId == 0 && serviceId == 0)
+            {
+                list = new ObservableCollection<Salarie>(list);
+            }
+
             list = new ObservableCollection<Salarie>(list.Where(s => s.Nom.ToLower().Contains(search.ToLower()) ||
                                                             s.Email.ToLower().Contains(search.ToLower()) ||
                                                             s.TelFix.ToLower().Contains(search.ToLower()) ||
                                                             s.TelPort.ToLower().Contains(search.ToLower()) ||
-                                                            s.Prenom.ToLower().Contains(search.ToLower()) ||
-                                                            s.Service.NomService.ToLower().Contains(search.ToLower()) ||
-                                                            s.Site.Ville.ToLower().Contains(search.ToLower())));
-
+                                                            s.Prenom.ToLower().Contains(search.ToLower())));
 
             foreach (var s in list)
             {
                 SalariesViewModel.Instance.ListeSalaries.Add(s);
             }
-
         }
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -66,6 +78,22 @@ namespace AnnuaireWPF.Views.Salaries
             var bsl = SalariesViewModel.Instance.BaseSalarieList;
 
             SearchList(txt, bsl);
+        }
+
+        private void SitesComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Site site = (Site)((ComboBox)sender).SelectedItem;
+            SalariesViewModel.Instance.SiteId = site.Id;
+
+            SearchList(SearchBox.Text, SalariesViewModel.Instance.BaseSalarieList);
+        }
+
+        private void ServicesComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Service service = (Service)((ComboBox)sender).SelectedItem;
+            SalariesViewModel.Instance.ServiceId = service.Id;
+
+            SearchList(SearchBox.Text, SalariesViewModel.Instance.BaseSalarieList);
         }
     }
 }
