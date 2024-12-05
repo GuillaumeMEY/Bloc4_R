@@ -30,6 +30,8 @@ namespace AnnuaireWPF.Views.Services
         {
             MainViewModel.Instance.ChargerServices();
         }
+
+        // Requete update service
         private void UpdateService_Click(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;
@@ -37,6 +39,7 @@ namespace AnnuaireWPF.Views.Services
             ServicesViewModel.Instance.UpdateService(service);
             MainViewModel.Instance.ChargerServices();
         }
+        // requete delete service 
         private void DeleteService_Click(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;

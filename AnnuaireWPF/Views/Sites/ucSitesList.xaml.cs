@@ -26,11 +26,13 @@ namespace AnnuaireWPF.Views.Sites
         {
             InitializeComponent();
         }
+        // envoi vers detail site
         private void SiteDetails_Click(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;
             MainViewModel.Instance.ChargerSite(((Site)btn.DataContext).Id);
         }
+        // page creation site
         private void SiteCreate_Click(object sender, RoutedEventArgs e)
         {
             MainViewModel.Instance.CreateSite();

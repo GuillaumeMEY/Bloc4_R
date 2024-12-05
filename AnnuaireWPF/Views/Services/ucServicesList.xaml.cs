@@ -31,6 +31,7 @@ namespace AnnuaireWPF.Views.Services
             var btn = sender as Button;
             MainViewModel.Instance.ChargerService(((Service)btn.DataContext).Id);
         }
+        // envoi vers page creation service
         private void ServiceCreate_Click(object sender, RoutedEventArgs e)
         {
             MainViewModel.Instance.CreateService();

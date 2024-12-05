@@ -27,18 +27,20 @@ namespace AnnuaireWPF.Views.Salaries
             InitializeComponent();
         }
 
+        // comboBox des services
         private void comboBoxServicesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Service service = (Service)((ComboBox)sender).SelectedItem;
             SalariesViewModel.Instance.Salarie.ServiceId = service.Id;
         }
 
+        // comboBox des sites
         private void comboBoxSitesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Site site = (Site)((ComboBox)sender).SelectedItem;
             SalariesViewModel.Instance.Salarie.SiteId = site.Id;
         }
-
+        // Envoi le formulaire
         private void CreateSalarie_Click(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;
@@ -47,6 +49,7 @@ namespace AnnuaireWPF.Views.Salaries
             MainViewModel.Instance.ChargerSalaries();
         }
 
+        // bouton retour
         private void Retour_Click(object sender, RoutedEventArgs e)
         {
             MainViewModel.Instance.ChargerSalaries();

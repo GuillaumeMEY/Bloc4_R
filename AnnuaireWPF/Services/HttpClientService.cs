@@ -23,6 +23,7 @@ namespace AnnuaireWPF.Services
         }
 
         // Salariés
+        // retounr info de tous les salaries
         public static async Task<ObservableCollection<Salarie>> GetAllSalaries()
         {
             string route = $"api/Salaries";
@@ -97,6 +98,7 @@ namespace AnnuaireWPF.Services
 
 
         // Sites
+        // affiche info tous les sites
         public static async Task<ObservableCollection<Site>> GetAllSites()
         {
             string route = $"api/Sites";
@@ -169,6 +171,7 @@ namespace AnnuaireWPF.Services
             }
         }
         // Services
+        // affiche info tous les services
         public static async Task<ObservableCollection<Service>> GetAllServices()
         {
             string route = $"api/Services";

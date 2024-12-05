@@ -25,6 +25,7 @@ namespace AnnuaireWPF.Views.Services
         {
             InitializeComponent();
         }
+        // envoi requete creation de servvice
         private void CreateService_Click(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;
@@ -32,6 +33,7 @@ namespace AnnuaireWPF.Views.Services
             ServicesViewModel.Instance.CreateService(service);
             MainViewModel.Instance.ChargerServices();
         }
+        // boutton retour
         private void Retour_Click(object sender, RoutedEventArgs e)
         {
             MainViewModel.Instance.ChargerServices();

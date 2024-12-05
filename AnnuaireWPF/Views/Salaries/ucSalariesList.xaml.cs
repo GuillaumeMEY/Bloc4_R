@@ -28,16 +28,19 @@ namespace AnnuaireWPF.Views.Salaries
             InitializeComponent();
             SalariesViewModel.Instance.GetAllSalaries();
         }
+        // envoi vers les detail du salarie
         private void SalarieDetails_Click(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;
             MainViewModel.Instance.ChargerSalarie(((Salarie)btn.DataContext).Id);
         }
+        // envoi vers creer un salarie
         private void SalarieCreate_Click(object sender, RoutedEventArgs e)
         {
             MainViewModel.Instance.CreateSalarie();
         }
 
+        // barre de recherche
         public void SearchList(string search, ObservableCollection<Salarie> list)
         {
             SalariesViewModel.Instance.ListeSalaries.Clear();
@@ -80,6 +83,7 @@ namespace AnnuaireWPF.Views.Salaries
             SearchList(txt, bsl);
         }
 
+        // menu deroulant site dans la barre de recherche
         private void SitesComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Site site = (Site)((ComboBox)sender).SelectedItem;
@@ -88,6 +92,7 @@ namespace AnnuaireWPF.Views.Salaries
             SearchList(SearchBox.Text, SalariesViewModel.Instance.BaseSalarieList);
         }
 
+        // menu deroulant service dans la barre de recherche
         private void ServicesComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Service service = (Service)((ComboBox)sender).SelectedItem;

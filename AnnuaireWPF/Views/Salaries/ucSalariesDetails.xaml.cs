@@ -43,6 +43,8 @@ namespace AnnuaireWPF.Views.Salaries
         {
             MainViewModel.Instance.ChargerSalaries();
         }
+
+        // Envoi la requete pour mettre a jour
         private void UpdateSalarie_Click(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;
@@ -50,6 +52,7 @@ namespace AnnuaireWPF.Views.Salaries
             SalariesViewModel.Instance.UpdateSalarie(salarie);
             MainViewModel.Instance.ChargerSalaries();
         }
+        // envoi requete pour delete
         private void DeleteSalarie_Click(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;

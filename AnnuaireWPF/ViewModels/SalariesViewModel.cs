@@ -38,6 +38,7 @@ namespace AnnuaireWPF.ViewModels
         }
 
 
+        // appel fonction pour afficher liste des salaries
         public async void GetAllSalaries()
         {
             ListeSalaries = await HttpClientService.GetAllSalaries();
@@ -46,26 +47,26 @@ namespace AnnuaireWPF.ViewModels
             OnPropertyChanged(nameof(BaseSalarieList));
         }
 
-
+        // appel fonction pour afficher detail d'un salarie
         public async void GetSalarie(int salarieId)
         {
             Salarie = await HttpClientService.GetSalarie(salarieId);
             SalarieId = salarieId;
             OnPropertyChanged(nameof(Salarie));
         }
-
+        // appel fonction pour creer salarie
         public async void CreateSalarie(Salarie salarie)
         {
             await HttpClientService.CreateSalarie(salarie);
             MainViewModel.Instance.ChargerSalaries();
         }
-
+        // appel fonction pour update salarie
         public async void UpdateSalarie(Salarie salarie)
         {
             await HttpClientService.UpdateSalarie(salarie);
             MainViewModel.Instance.ChargerSalaries();
         }
-
+        // appel fonction pour delete salarie
         public async void DeleteSalarie(int id)
         {
             await HttpClientService.DeleteSalarie(id);

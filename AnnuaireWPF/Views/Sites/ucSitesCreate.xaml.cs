@@ -25,6 +25,7 @@ namespace AnnuaireWPF.Views.Sites
         {
             InitializeComponent();
         }
+        // envoi requete creation site
         private void CreateSite_Click(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;
@@ -32,6 +33,7 @@ namespace AnnuaireWPF.Views.Sites
             SitesViewModel.Instance.CreateSite(site);
             MainViewModel.Instance.ChargerSites();
         }
+        // boutton retour
         private void Retour_Click(object sender, RoutedEventArgs e)
         {
             MainViewModel.Instance.ChargerSites();

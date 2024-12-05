@@ -25,10 +25,12 @@ namespace AnnuaireWPF.Views.Sites
         {
             InitializeComponent();
         }
+        // boutton retour
         private void Retour_Click(object sender, RoutedEventArgs e)
         {
             MainViewModel.Instance.ChargerSites();
         }
+        // requete update site
         private void UpdateSite_Click(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;
@@ -36,6 +38,7 @@ namespace AnnuaireWPF.Views.Sites
             SitesViewModel.Instance.UpdateSite(site);
             MainViewModel.Instance.ChargerSites();
         }
+        // requette delete site
         private void DeleteSite_Click(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;

@@ -24,6 +24,9 @@ namespace AnnuaireWPF.ViewModels
             set { userControl = value; OnPropertyChanged(); }
         }
 
+
+        // Chaque fonction renvoi vers le UCcontroller qui porte son nom
+
         // Salaries
         public void ChargerSalaries()
         {

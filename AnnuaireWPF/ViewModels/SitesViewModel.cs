@@ -36,28 +36,34 @@ namespace AnnuaireWPF.ViewModels
         {
             ListeSites = await HttpClientService.GetAllSites();
             OnPropertyChanged(nameof(ListeSites));
+            MainViewModel.Instance.ChargerSites();
         }
+        // appel fonction pour afficher un site
         public async void GetSite(int siteId)
         {
             Site = await HttpClientService.GetSite(siteId);
             SiteId = siteId;
             OnPropertyChanged(nameof(Site));
         }
+        // appel fonction pour creer un site
         public async void CreateSite(Site site)
         {
             await HttpClientService.CreateSite(site);
+            MainViewModel.Instance.ChargerSites();
         }
 
         // Appel fonction Update site
         public async void UpdateSite(Site site)
         {
             await HttpClientService.UpdateSite(site);
+            MainViewModel.Instance.ChargerSites();
         }
         
         // Appel fonction Delete site
         public async void DeleteSite(int id)
         {
             await HttpClientService.DeleteSite(id);
+            MainViewModel.Instance.ChargerSites();
         }
     }
 }
