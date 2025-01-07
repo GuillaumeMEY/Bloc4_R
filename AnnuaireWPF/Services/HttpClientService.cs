@@ -4,6 +4,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using Annuaire.DAO;
 using AnnuaireWPF.Models;
+using AnnuaireWPF.ViewModels;
 using Newtonsoft.Json;
 
 namespace AnnuaireWPF.Services

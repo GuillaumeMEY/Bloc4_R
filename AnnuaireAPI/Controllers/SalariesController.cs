@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Annuaire.Context;
 using Annuaire.DAO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AnnuaireAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    // [Authorize]
     public class SalariesController : ControllerBase
     {
         private readonly AnnuaireContext _context;

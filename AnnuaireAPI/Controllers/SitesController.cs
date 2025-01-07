@@ -12,6 +12,7 @@ namespace AnnuaireAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    // [Authorize]
     public class SitesController : ControllerBase
     {
         private readonly AnnuaireContext _context;
